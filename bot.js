@@ -11,6 +11,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
+  console.log(member.bot);
   if (member.bot) {
       channel.send(`おい${member}\nはい、これ ${member.guild.channels.find('name', '会話')}\n(ﾁｯ..botかよ...)`);
   }else{
