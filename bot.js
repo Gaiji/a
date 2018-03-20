@@ -13,6 +13,8 @@ client.on('message', (bot, message) => {
         return;
     }
     console.log('load')
+    console.log(bot)
+    console.log(message)
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
         method: 'POST',
