@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${channel} でしましょう！`);
+  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
 });
 client.on('message', (bot, message) => {
     if (!(bot.channel.name === '会話')) {
