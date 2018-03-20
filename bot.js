@@ -12,7 +12,7 @@ client.on('message', (bot, message) => {
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
         method: 'POST',
-        form: { apikey: process.env.a3rt_talk_apikey, query: message.text },
+        form: { apikey: process.env.a3rt_talk_apikey, query: message },
         json:  true
     }, (err, response, body) => {
         if (body.status == 0) {
