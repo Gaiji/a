@@ -9,7 +9,7 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'general');
+  const channel = member.guild.channels.find('name', 'main');
   if (!channel) return;
   console.log(member + 'がサーバーに参加しました (' + member.username + ')');
   channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
