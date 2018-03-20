@@ -13,12 +13,11 @@ client.on('message', (bot, message) => {
         return;
     }
     console.log('load')
-    console.log(bot)
-    console.log(message)
+    console.log(bot.content)
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
         method: 'POST',
-        form: { apikey: process.env.API_KEY, query: bot },
+        form: { apikey: process.env.API_KEY, query: bot.content },
         json:  true
     }, (err, response, body) => {
         if (body.status == 0) {
