@@ -14,7 +14,7 @@ client.on('ready', () => {
       if (err) throw err;
       console.log('Saved!!');
     });
-     fs.readFile(process.argv[2], 'utf-8', function (err, data) {
+     fs.readFile('save.txt', 'utf-8', function (err, data) {
          console.log(data);
      });
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
