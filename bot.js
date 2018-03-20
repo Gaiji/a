@@ -10,10 +10,6 @@ var key = "12755d3c-51c6-4926-bb41-2baeb72d4c0c";
 
 client.on('ready', () => {
     console.log('I am ready!');
-    fs.appendFile('save.txt', 'Hello content!', function (err) {
-      if (err) throw err;
-      console.log('Saved!!');
-    });
      fs.readFile('save.txt', 'utf-8', function (err, data) {
          console.log(data);
      });
