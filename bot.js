@@ -8,7 +8,11 @@ client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
-
+client.on('guildMemberAdd', member => {
+  const channel = member.guild.channels.find('name', 'member-log');
+  if (!channel) return;
+  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は#会話でしましょう！`);
+});
 client.on('message', (bot, message) => {
     if (!(bot.channel.name === '会話')) {
         return;
