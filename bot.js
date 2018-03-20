@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (bot, message) => {
-    if (message.bot){
+    if (message.user.bot){
         return;
     }
     request({
