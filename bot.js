@@ -9,9 +9,9 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'member-log');
+  const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は#会話でしましょう！`);
+  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は #会話 でしましょう！`);
 });
 client.on('message', (bot, message) => {
     if (!(bot.channel.name === '会話')) {
