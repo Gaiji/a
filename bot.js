@@ -18,6 +18,13 @@ client.on('guildMemberAdd', member => {
   channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
   member.addRole(member.guild.roles.find('name','Member'));
 });
+function zero(variable) {
+    if (variable === undefined) {
+        return 0;
+    } else {
+        return variable;
+    }
+}
 client.on('message', (bot, message) => {
     if (bot.content.startsWith(prefix + 'uhc')) {
         let args = bot.content.split(" ").slice(1);
