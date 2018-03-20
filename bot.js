@@ -18,13 +18,13 @@ client.on('guildMemberAdd', member => {
   member.addRole(member.guild.roles.find('name','Member'));
 });
 client.on('message', (bot, message) => {
-    if (message.content.startsWith(prefix + 'uhc')) {
-        let args = message.content.split(" ").slice(1);
+    if (bot.content.startsWith(prefix + 'uhc')) {
+        let args = bot.content.split(" ").slice(1);
         let name = args.join(" ")
         var url = 'https://api.mojang.com/users/profiles/minecraft/'+name
         request(url, function(err, response, body) {
             if(!body) {
-                return message.reply('指定されたプレイヤーは存在しません');
+                return bot.reply('指定されたプレイヤーは存在しません');
             }
             body = JSON.parse(body);
             let uuid = body.id;
@@ -32,7 +32,7 @@ client.on('message', (bot, message) => {
             request(url2, function(err, response, body) {
                 body = JSON.parse(body);
             if (body.player === null) {
-                return message.reply('指定されたプレイヤーはステータスが存在しません');
+                return bot.reply('指定されたプレイヤーはステータスが存在しません');
             }
             let rank;
             if (body.player.rank === "YOUTUBER") {
