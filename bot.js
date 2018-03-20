@@ -12,6 +12,7 @@ client.on('message', (bot, message) => {
     if (bot.author.bot){
         return;
     }
+    console.log('load')
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
         method: 'POST',
@@ -20,9 +21,12 @@ client.on('message', (bot, message) => {
     }, (err, response, body) => {
         if (body.status == 0) {
             bot.reply(`メッセージ: ${body.results[0].reply} (${Math.ceil(body.results[0].perplexity * 100) / 100})`);
+            console.log('not error')
         } else {
             bot.reply(`エラー: [${body.status} ${body.message}]`);
+            console.log('error')
             console.log(bot)
+            
         }
     });
 });
