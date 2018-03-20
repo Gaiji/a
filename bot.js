@@ -148,7 +148,7 @@ client.on('message', (bot, message) => {
                             .addField("Last login", zero(lastlogin), true)
                             .setColor(rank)
                             .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
-                            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
+                            .setThumbnail('https://crafatar.com/avatars/' + (name || '') + '?size=100');
                         message.channel.sendEmbed(embed);
                     });
                 });
