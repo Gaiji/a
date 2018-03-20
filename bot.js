@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  console.log(member.username + 'がサーバーに参加しました');
+  console.log(member + 'がサーバーに参加しました (' + member.username + ')');
   channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
   member.addRole(member.guild.roles.find('name','Member'));
 });
