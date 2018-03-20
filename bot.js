@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (bot, message) => {
-    if (!(message.channel.name === '会話')) {
+    if (!(bot.channel.name === '会話')) {
         return;
     }
     if (bot.author.bot){
