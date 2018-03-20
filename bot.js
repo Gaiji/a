@@ -6,7 +6,7 @@ var request = require('request');
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setPresence({ game: { name: '会話チャンネルで話しましょう', type: 0 } });
+    client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
 
 client.on('message', (bot, message) => {
