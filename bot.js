@@ -150,6 +150,7 @@ client.on('message', (bot, message) => {
                             .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
                             .setThumbnail('https://crafatar.com/avatars/' + (name || '') + '?size=100');
                         bot.channel.sendEmbed(embed);
+                        return;
                     });
                 });
             });
