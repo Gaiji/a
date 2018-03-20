@@ -19,9 +19,9 @@ client.on('message', (bot, message) => {
         json:  true
     }, (err, response, body) => {
         if (body.status == 0) {
-            bot.reply(message, `メッセージ`);
+            bot.reply(`メッセージ: ${body.results[0].reply} (${Math.ceil(body.results[0].perplexity * 100) / 100})`);
         } else {
-            bot.reply(message, `エラー: [${body.status} ${body.message}]`);
+            bot.reply(`エラー: [${body.status} ${body.message}]`);
         }
     });
 });
