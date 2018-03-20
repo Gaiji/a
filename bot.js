@@ -5,6 +5,7 @@ const snekfetch = require("snekfetch");
 let prefix = ';'
 
 var request = require('request');
+var key = "12755d3c-51c6-4926-bb41-2baeb72d4c0c";
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -28,7 +29,7 @@ client.on('message', (bot, message) => {
             }
             body = JSON.parse(body);
             let uuid = body.id;
-            let url2 = 'http://sk1er.club/genkey?name=' + name + '&uuid=' + uuid + '&mcver=1.8.8&modver=4.1.2&mod=LEVEL_HEAD'
+            let url2 = 'https://api.hypixel.net/player?key='+key+'&name='+name
             request(url2, function(err, response, body) {
                 body = JSON.parse(body);
             if (body.player === null) {
