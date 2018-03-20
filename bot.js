@@ -5,10 +5,15 @@ const snekfetch = require("snekfetch");
 let prefix = ';'
 
 var request = require('request');
+var fs = require('fs');
 var key = "12755d3c-51c6-4926-bb41-2baeb72d4c0c";
 
 client.on('ready', () => {
     console.log('I am ready!');
+    fs.appendFile('save.txt', 'Hello content!', function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
 client.on('guildMemberAdd', member => {
