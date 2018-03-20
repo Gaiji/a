@@ -9,9 +9,8 @@ client.on('ready', () => {
 });
 
 client.on('message', (bot, message) => {
-    console.log(bot.author.username);
-    console.log('${bot.author.username}');
-    if (bot.author.username){
+    console.log(bot.author.bot);
+    if (bot.author.bot){
         return;
     }
     request({
