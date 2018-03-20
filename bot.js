@@ -9,7 +9,6 @@ client.on('ready', () => {
 });
 
 client.on('message', (bot, message) => {
-    console.log(bot.author.bot);
     if (bot.author.bot){
         return;
     }
@@ -20,7 +19,7 @@ client.on('message', (bot, message) => {
         json:  true
     }, (err, response, body) => {
         if (body.status == 0) {
-            bot.reply(message, `メッセージ: ${body.results[0].reply} (${Math.ceil(body.results[0].perplexity * 100) / 100})`);
+            bot.reply(message, `メッセージ`);
         } else {
             bot.reply(message, `エラー: [${body.status} ${body.message}]`);
         }
