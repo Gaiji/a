@@ -12,7 +12,7 @@ client.on('ready', () => {
     console.log('I am ready!');
     fs.appendFile('save.txt', 'Hello content!', function (err) {
       if (err) throw err;
-      console.log('Saved!');
+      console.log('Saved!!');
     });
     client.user.setPresence({ game: { name: '#会話 で話しましょう', type: 0 } });
 });
