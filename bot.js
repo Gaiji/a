@@ -149,7 +149,7 @@ client.on('message', (bot, message) => {
                             .setColor(rank)
                             .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
                             .setThumbnail('https://crafatar.com/avatars/' + (name || '') + '?size=100');
-                        message.channel.sendEmbed(embed);
+                        bot.channel.sendEmbed(embed);
                     });
                 });
             });
