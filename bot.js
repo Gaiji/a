@@ -6,13 +6,16 @@ var request = require('request');
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setPresence({ game: { name: '会話チャンネルで話しましょう', type: 0 } });
 });
 
 client.on('message', (bot, message) => {
+    if (!(message.channel.name === '会話')) {
+        return;
+    }
     if (bot.author.bot){
         return;
     }
-    console.log('load')
     console.log(bot.author.username + ': ' + bot.content)
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
