@@ -26,6 +26,7 @@ function zero(variable) {
     }
 }
 client.on('message', (bot, message) => {
+    console.log(bot.author.username + ': ' + bot.content)
     if (bot.content.startsWith(prefix + 'uhc')) {
         let args = bot.content.split(" ").slice(1);
         let name = args.join(" ")
@@ -162,7 +163,6 @@ client.on('message', (bot, message) => {
     if (bot.author.bot){
         return;
     }
-    console.log(bot.author.username + ': ' + bot.content)
     request({
         url: 'https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk',
         method: 'POST',
