@@ -11,7 +11,11 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find('name', 'general');
   if (!channel) return;
-  channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
+  if (member.bot) {
+      channel.send(`おい${member}\nはい、これ ${member.guild.channels.find('name', '会話')}\n(ﾁｯ..botかよ...)`);
+  }else{
+      channel.send(`ようこそ！${member}さん！\n私と会話をしたい場合は ${member.guild.channels.find('name', '会話')} でしましょう！`);
+  }
 });
 client.on('message', (bot, message) => {
     if (!(bot.channel.name === '会話')) {
